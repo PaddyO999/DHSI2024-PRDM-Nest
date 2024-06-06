@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style type="text/css">
+/* <![CDATA[ */
+body {
+ background: #C96;
+ color: #FFF;
+ margin: 0 24pt 0 24pt;
+ font-family: Optima, sans-serif;
+ font-size: 13pt;
+}
+div {
+ height: 16pt;
+}
+a {
+ color: #C60;
+ text-decoration: none;
+}
+
+#atp {
+		position: absolute;
+		padding: 2px;
+		right: 100px;
+		top: 200px;
+		width: 300px;
+		height: 100px;
+}
+	
+ #statins {
+		position: absolute;
+		padding: 2px;
+		right: 100px;
+		top: 400px;
+		width: 450px;
+		height: 140px;
+		
+	}
+/* ]]> */
+</style>
+    <style type="text/css">
+	/* counter from http://www.devcurry.com/2010/06/display-running-counter-using-jquery.html */
+        #displayCounter{
+        font-size:18px;
+        font-family:Georgia;
+		font-style:italic;
+        }
+    </style>
+    <script type="text/javascript"
+    src="js/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            var cnt = 0;
+            var counter = setInterval(function() {
+                if (cnt < 160) {
+                    $('#displayCounter').html(cnt);
+                    cnt++;
+                }
+                else {
+                    clearInterval(counter);
+                    $('#displayCounter').html("<p style=\"font-size:14px;\">LDL cholesterol count &gt; 160. Consult ATPIII guidelines for recommendations on lifestyle and diet alteration and/or medication maintenance.</p>");
+                }
+            }, 100);
+        });
+    </script>
+
+
+    
+    	<script type="text/javascript" src="js/waves.js"></script>
+<script language="JavaScript" type="text/javascript">
+var t=0;
+var n=0;
+var paths=0;
+var above='sous-chef,crust,butter,shell,tongue,rolypoly,Francophile,gold'.split(',');
+var below='vein,pastry,brie,amuse bouche,ooze,herb,core,strata'.split(',');
+var trans='sink,taste,roll,consider,eviscerate,crack,bite,reject'.split(',');
+var imper='taste,eat,consider,reheat,prepare,bake,test,finish';
+imper=imper.split(',');
+var intrans='recoil,moan,salivate,chew,pause,sigh,masticate'.split(',');
+var s='s,'.split(',');
+var texture='silky,flaky'.split(',');
+function rand_range(max) {
+ return Math.floor(Math.random()*(max+1));
+}
+function choose(array) {
+ return array[rand_range(array.length-1)];
+}
+function path() {
+ var p=rand_range(1);
+ var words=choose(above);
+ if ((words=='rolypoly')&&(rand_range(3)==1)) {
+  words='myocardial infarction '+choose(trans);
+ } else {
+  words+=s[p]+' '+choose(trans)+s[(p+1)%2];
+ }
+ words+=' the '+choose(below)+choose(s)+'.';
+ return words;
+}
+function site() {
+ var words='';
+ if (rand_range(2)==1) {
+  words+=choose(above);
+ } else {
+  words+=choose(below);
+ }
+ words+='s '+choose(intrans)+'.';
+ return words;
+}
+function cave() {
+ var adjs=('inner,'+choose(texture)+',mellow,sharp,warm,spicy,layered,bite-sized,fatty,oozy').split(',');
+ var target=1+rand_range(3);
+ while (adjs.length>target) {
+  adjs.splice(rand_range(adjs.length),1);
+  }
+ var words='\u00a0\u00a0'+choose(imper)+' the '+adjs.join(' ')+' \u2014';
+ return words;
+}
+function do_line() {
+ var main=document.getElementById('main');
+ if (t<=25) {
+  t+=1;
+ } else {
+  main.removeChild(document.getElementById('main').firstChild);
+ }
+ if (n===0) {
+  text=' ';
+ } else if (n==1) {
+  paths=2+rand_range(2);
+  text=path();
+ } else if (n<paths) {
+  text=site();
+ } else if (n==paths) {
+  text=path();
+ } else if (n==paths+1) {
+  text=' ';
+ } else if (n==paths+2) {
+  text=cave();
+ } else {
+  text=' ';
+  n=0;
+ }
+ n+=1;
+ text=text.substring(0,1).toUpperCase()+text.substring(1,text.length);
+ last=document.createElement('div');
+ last.appendChild(document.createTextNode(text));
+ main.appendChild(last);
+}
+function poem() {
+ setInterval(do_line, 1200);
+}
+
+
+
+</script>
+  <title>Tasty Gougere</title>
+</head>
+<body onLoad="poem()">
+<h3>Tasty Goug&egrave;re</h3>
+<script type="text/javascript">
+
+marqueeInit({
+	uniqueid: 'statins',
+	style: {
+		'position': 'absolute',
+		'padding': '2px',
+		'right': '50px',
+		'top': '400px',
+		'width': '450px',
+		'height': '140px'
+	},
+	inc: 22, //speed - pixel increment for each iteration of this marquee's movement
+	mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+	moveatleast: 2,
+	neutral: 150,
+	savedirection: true
+});
+
+</script>
+
+<div class="marquee" id="statins">
+tion with a variety of medications, including cyclosporine,
+
+ﬁbrates, macrolide antibiotics, certain antifungal drugs, and
+
+niacin (19–21). Some of the drug to drug interactions
+
+involve speciﬁc interactions with the cytochrome P-450
+
+drug-metabolizing system, especially those involving the
+
+3A4 isozyme (22,23). The combination of statins with a
+
+ﬁbrate is attractive for persons who have both high serum
+
+cholesterol and high triglycerides or for those who continue
+
+to have elevated triglycerides after reaching their LDLcholesterol target on statin therapy. However, there may be
+
+a concern about an increased danger of developing myop-
+
+568 Pasternak et al. JACC Vol. 40, No. 3, 2002
+
+ACC/AHA/NHLBI Clinical Advisory on Statins August 7, 2002:567–72
+</div>
+
+
+
+    <div id="atp"><p>LDL cholesterol counter <em>(1 risk factor)</em></p>
+    <div id="displayCounter"></div></div>
+
+
+
+<div style="float:right; margin-top:12px;">
+<p>Based on "Taroko Gorge" by<br> 
+<a href="http://nickm.com">Nick Montfort &middot; 2012-06-21</a><br>
+with ATP guidelines from NIH.</p>
+</div>
+<div id="main"></div>
+</body>
+</html>
